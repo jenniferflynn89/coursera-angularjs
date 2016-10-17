@@ -5,6 +5,11 @@ angular.module("LunchCheck", [])
         
         $scope.checkTooMuch = function(){
             
+            if ($scope.itemsStr == "") {
+                $scope.message = "Please enter data first"
+                return
+            }
+            
             var items = $scope.itemsStr.split(",")
             
             if ( items.length > 3) {
